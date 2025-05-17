@@ -1,4 +1,4 @@
-/* Fonte neutra Roboto */
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -12,7 +12,7 @@ body {
   justify-content: center;
 }
 
-/* Overlay para escurecer o fundo */
+
 .overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -20,7 +20,6 @@ body {
   z-index: 0;
 }
 
-/* Container centralizado */
 main {
   position: relative;
   z-index: 1;
@@ -33,7 +32,6 @@ main {
   text-align: center;
 }
 
-/* Títulos */
 h1 {
   margin-bottom: 30px;
   color: #333333;
@@ -49,7 +47,7 @@ h2 {
   font-size: 1.3rem;
 }
 
-/* Botão */
+
 button {
   background-color: #888888;
   color: #f7f7f7;

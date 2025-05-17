@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Controle de Ponto</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-image: url('https://st3.depositphotos.com/2034249/33541/i/450/depositphotos_335410596-stock-photo-black-texture-text-field-space.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  main {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.3);
+    z-index: 1;
+    max-width: 380px;
+    width: 90%;
+    backdrop-filter: blur(8px);
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+  }
+  .botoes {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .botoes button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+  }
+  .botoes button:hover {
+    background-color: #6a6a6a;
+  }
+  .registro {
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.08);
+  }
+  footer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #bbbbbb;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Controle de Ponto</h1>
+  <div class="botoes">
+    <button onclick="registrar('entrada')">Registrar Entrada</button>
+    <button onclick="registrar('inicio_intervalo')">Início Intervalo</button>
+    <button onclick="registrar('retorno_intervalo')">Retorno Intervalo</button>
+    <button onclick="registrar('saida')">Registrar Saída</button>
+  </div>
+  <div class="registro" id="registroEntrada">Entrada: --</div>
+  <div class="registro" id="registroInicioIntervalo">Início Intervalo: --</div>
+  <div class="registro" id="registroRetornoIntervalo">Retorno Intervalo: --</div>
+  <div class="registro" id="registroSaida">Saída: --</div>
+  <footer>
+    Desenvolvido por T.C
+  </footer>
+</main>
+<script>
+  function registrar(tipo) {
+    const agora = new Date();
+    const hora = agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('registro' + tipo.charAt(0).toUpperCase() + tipo.slice(1).replace('_', ''))
+      .textContent = tipo.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()) + ': ' + hora;
+  }
+</script>
+</body>
+</html>
+
